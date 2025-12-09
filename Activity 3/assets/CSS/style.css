@@ -1,0 +1,137 @@
+body {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    max-height: 100vh;
+}
+
+/* PRODUCT IMAGES */
+.product-img {
+    width: 180px;
+    height: 280px;
+}
+
+/* SECTION TITLE */
+.section-title {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+}
+
+/* FOOTER */
+footer {
+    background-color: #593c17;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 5%;
+}
+
+footer img {
+   margin: 0;
+}
+
+footer p {
+    font-size: 14px;
+    color: white;
+}
+
+.footer-icon {
+    margin: 0 7px;
+}
+
+/* NAVIGATION */
+.navbar-nav .nav-link {
+    font-size: 25px;
+    
+    color: black;
+    position:relative;
+    transition: 0.3s ease;
+    margin-left: 20px;
+}
+
+/* Hover effect */
+.navbar-nav .nav-link:hover {
+    color: brown;
+    transform: scale(1.1);
+}
+
+.p1 .product-img:hover{
+    transform: scale(1.1);
+     transition: 0.3s ease;
+}
+
+.p1 .product-name{
+    font-weight: bold;
+}
+
+.p1 .price-tag{
+    font-weight: bold;
+}
+
+
+/* Active (current page) */
+.navbar-nav .nav-link.active {
+    color: brown;
+}
+
+/* Underline animation */
+.navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background-color: brown;
+    transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    width: 100%;
+}
+
+/* Prevent global UL changes */
+.nav-center li,
+.nav-icons li {
+    list-style: none;
+}
+
+/* Center the middle nav links */
+.navbar-collapse {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-center {
+    flex-grow: 1 !important;
+    display: flex !important;
+    justify-content: center !important;
+}
+
+.navbar a{
+    font-family: 'BillionDreams', Impact;
+    font-size: 30px;
+
+}
+
+@font-face {
+    font-family: 'BrewQuadrant';
+    src: url('../Fonts/fat_kat/Fat Kat - (Demo) hanscostudio.com.ttf');
+}
+
+@font-face {
+    font-family: 'BillionDreams';
+    src: url('../Fonts/billion_dreams/BillionDreams_PERSONAL.ttf');
+}
+
+@font-face {
+    font-family: 'AuthorHandwriting';
+    src: url('../Fonts/author_handwriting/Author Handwriting.otf');
+}
+
+@font-face {
+    font-family: 'lemon';
+    src: url('../Fonts/lemon_2/LEMON.otf');
+}

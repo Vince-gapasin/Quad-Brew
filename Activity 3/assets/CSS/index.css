@@ -1,0 +1,126 @@
+
+body {
+    background-color: #ffffff;
+    margin: 0;
+}
+header {
+    height: 100vh;
+}
+
+.offcanvas-body {
+    color: black;
+}
+.navbar {
+    padding: 0;
+    background-color: #593c17;
+}
+
+.navbar a {
+    font-family: 'BillionDreams', sans-serif;
+    font-size: 60px;
+    color: #ffffff;
+}
+
+.brand {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
+.navbar-toggler {
+    width: 35px;
+    height: 35px;
+    background-image: url('../images/index/whiteNeckless.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none;
+    margin-right: 20px;
+}
+.categ {
+
+    margin: 120px 60px 60px 60px;
+}
+
+.bdy-txt1 {
+    font-family: sans-serif;
+    font-weight: bolder;
+    font-size: 50px;
+    padding-left: 10px;
+    margin-top: 30px;
+}
+
+.bdy-txt1 p {
+    font-size: 34px;
+    font-weight: normal;
+    margin-bottom: 40px;
+    font-family: 'authorhandwriting', sans-serif;
+}
+
+.button {
+    margin: 20px 0px;
+}
+
+.name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 100px;
+}
+.product-name {
+    font-size: 40px;
+    font-weight: normal;
+    margin-top: 10px;
+    text-align: center;
+    justify-self: center;
+    font-family: 'BillionDreams', sans-serif;
+}
+
+@font-face {
+    font-family: 'BrewQuadrant';
+    src: url('../Fonts/fat_kat/Fat Kat - (Demo) hanscostudio.com.ttf');
+}
+
+@font-face {
+    font-family: 'BillionDreams';
+    src: url('../Fonts/billion_dreams/BillionDreams_PERSONAL.ttf');
+}
+
+@font-face {
+    font-family: 'AuthorHandwriting';
+    src: url('../Fonts/author_handwriting/Author Handwriting.otf');
+}
+
+@font-face {
+    font-family: 'lemon';
+    src: url('../Fonts/lemon_2/LEMON.otf');
+}
+
+footer {
+    background-color: #593c17;
+    color: white;
+    height: fit-content;
+}
+
+.lc-block p.lead {
+    color: white;
+    font-size: 14px;
+}
+
+.ordr-btn {
+    background-color: #593c17;
+    border-color: #ffffff;
+    color: white;
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 20px 40px;
+    font-size: 20px;
+}
+
+.pics {
+    align-self: end;
+}
+
+.pics :hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+}

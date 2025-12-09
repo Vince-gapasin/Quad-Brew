@@ -1,0 +1,174 @@
+body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-color: #FFF8E7;
+}
+.navbar {
+    padding: 0;
+    background-color: #FFF8E7;
+}
+
+.navbar a {
+    font-family: 'AuthorHandwriting', sans-serif;
+    font-size: 35px;
+    color: #ffffff;
+    background-color: #FFF8E7;
+}
+
+.navbar h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 70px;
+    color: black;
+}
+
+.navbar-toggler {
+    width: 35px;
+    height: 35px;
+    background-image: url('assets/index/profile.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none;
+    margin-right: 20px;
+}
+
+.cart {
+    background-color: #ffffff;
+    border-radius: 2%;
+    height: 90vh;
+}
+
+.name {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.item {
+    background-color: black;
+    border-radius: 50px;
+    color: white;
+    margin: 10px 0;
+}
+
+.payment {
+    border-radius: 2%;
+    margin-top: 50px;
+    height: 30vh;
+}
+
+.method {
+    margin: 10px 0;
+}
+
+.total {
+    margin-bottom: 50px;
+}
+
+.totalcol {
+    background-color: bisque;
+    padding: 10px;
+    border-radius: 50px;
+    margin-top: 10px;
+}
+
+.payment-method {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'BrewQuadrant';
+    src: url('../Fonts/fat_kat/Fat Kat - (Demo) hanscostudio.com.ttf');
+}
+
+@font-face {
+    font-family: 'BillionDreams';
+    src: url('../Fonts/billion_dreams/BillionDreams_PERSONAL.ttf');
+}
+
+@font-face {
+    font-family: 'AuthorHandwriting';
+    src: url('../Fonts/author_handwriting/Author Handwriting.otf');
+}
+
+@font-face {
+    font-family: 'lemon';
+    src: url('../Fonts/lemon_2/LEMON.otf');
+}
+
+.myCart {
+    font-family: 'BillionDreams', sans-serif;
+    font-size: 50px;
+    color: black;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.checkout-btn1 {
+    background-color: #e20000de;
+    border-color: #ffffff;
+    color: white;
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.checkout-btn2 {
+    background-color: #fff700de;
+    border-color: #ffffff;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.checkout-btn3 {
+    background-color: #229e0ff2;
+    border-color: #ffffff;
+    color: white;
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.cofbag {
+    margin-bottom: 100px;
+    padding-left: 50px;
+}
+
+.broom {
+    margin-bottom: 100px;
+}
+
+.buttons a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.box {
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.placeorder {
+    margin-top: 20px;
+}
+
+.placeorder a {
+    font-size: 20px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.editbtn {
+    border: none;
+}
+
+h6 {
+    font-weight: bold;
+    font-size: 18px;
+}
