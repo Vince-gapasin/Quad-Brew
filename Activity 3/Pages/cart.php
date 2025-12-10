@@ -6,12 +6,13 @@
     <title>Cart</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/livecanvas-team/ninjabootstrap/dist/css/bootstrap.min.css" media="all">
     <link rel="stylesheet" href="../assets/CSS/cart.css">
+    <script src="../assets/JS/add_to_cart.js"></script>
 </head>
 <body>
     
     <nav class="navbar ">
         <div class="container-fluid">
-            <a editable="inline" class="navbar-brand text-black ms-3" href="coffee.html">>Back</a>
+            <a editable="inline" class="navbar-brand text-black ms-3" href="coffee.php">>Back</a>
 
             <h1 class="myCart">MyCart</h1>
 
@@ -122,13 +123,13 @@
 
                         <div class="row">
                             <div class="buttons col-md-4">
-                                <button class="checkout-btn1 btn btn-danger"><a href="coffee.html">Clear Shopping Cart</a></button>
+                                <button class="checkout-btn1 btn btn-danger"><a href="coffee.php">Clear Shopping Cart</a></button>
                             </div>
                             <div class="buttons col-md-4">
-                                <button class="checkout-btn2 btn btn-primary"><a href="coffee.html">Add Another Order</a></button>
+                                <button class="checkout-btn2 btn btn-primary"><a href="coffee.php">Add Another Order</a></button>
                             </div>
                             <div class="buttons col-md-4">
-                                <button class="checkout-btn3 btn btn-success"><a href="conf.html">Proceed to Checkout</a></button>
+                                <button class="checkout-btn3 btn btn-success"><a href="conf.php">Proceed to Checkout</a></button>
                             </div>
                         </div>
                     </div>
@@ -140,4 +141,4 @@
     </main>
 </body>
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-</html>
+    </html>

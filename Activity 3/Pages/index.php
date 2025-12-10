@@ -13,7 +13,7 @@
 
     <nav class="navbar">
         <div class="container-fluid">
-            <a editable="inline" class="brand" href="index.html">
+            <a editable="inline" class="brand" href="index.php">
                 Brew Quad Coffee</a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
@@ -59,7 +59,7 @@
             <div class="categ row">
                 <div class="bdy-txt1 col-lg-4 text-start ">Featured Drinks
                     <p class="text-start">Enjoy your drink at your place</p>
-                    <a href="coffee.html" class="ordr-btn btn btn-success">Order Now</a>
+                    <a href="coffee.php" class="ordr-btn btn btn-success">Order Now</a>
                 </div>
 
                 <div class="pics col-md-2 text-center"><img src="../assets/images/index/latte.png" alt="Iced Latte" width="180px" height="300px">

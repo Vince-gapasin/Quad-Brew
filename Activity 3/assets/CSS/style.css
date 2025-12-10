@@ -1,5 +1,9 @@
+/* * {
+    border: 1px solid red;
+} */
+
 body {
-    overflow-y: hidden;
+    overflow-y: auto;
     overflow-x: hidden;
     max-height: 100vh;
 }

@@ -11,7 +11,7 @@
     
     <nav class="navbar ">
         <div class="container-fluid">
-            <a editable="inline" class="navbar-brand text-black ms-3" href="cart.html">>Back</a>
+            <a editable="inline" class="navbar-brand text-black ms-3" href="cart.php">>Back</a>
 
             <h1 class="myCart mt-5">Confirm Order</h1>
 
@@ -74,9 +74,7 @@
                                 </div>
                                 <div class="col-md-3 text-center">$4.00</div>
                                 <div class="col-md-3 text-center">
-                                    <button class="qty-btn">-</button>
                                     <span class="qty-number mx-2">1</span>
-                                    <button class="qty-btn">+</button>
                                 </div>
                                 <div class="col-md-3 text-center">$4.00</div>
 
@@ -90,9 +88,7 @@
                                 </div>
                                 <div class="col-md-3 text-center">$4.00</div>
                                 <div class="col-md-3 text-center">
-                                    <button class="qty-btn">-</button>
                                     <span class="qty-number mx-2">1</span>
-                                    <button class="qty-btn">+</button>
                                 </div>
                                 <div class="col-md-3 text-center">$4.00</div>
                             </div>
@@ -121,7 +117,7 @@
             
                 <div class="placeorder row col-md-12 justify-content-center">
                     <div class="col-md-8 text-center">
-                        <button class="checkout-btn1 btn btn-Danger"><a href="thankyou.html">Place Order</a></button>
+                        <button class="checkout-btn1 btn btn-Danger"><a href="thankyou.php">Place Order</a></button>
                     </div>
                 </div>
                 

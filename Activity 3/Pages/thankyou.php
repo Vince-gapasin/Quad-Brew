@@ -11,7 +11,7 @@
     
     <nav class="navbar ">
         <div class="container-fluid">
-            <a editable="inline" class="navbar-brand text-black ms-3" href="index.html">>Back</a>
+            <a editable="inline" class="navbar-brand text-black ms-3" href="index.php">>Back</a>
 
             <h1 class="myCart">Order Placed</h1>
 
@@ -94,9 +94,9 @@
                     <div class="row ps-5">Total</div>
             </div>
 
-            <div class="thankyou row mt-2   ">Thank You</div>
+            <div class="thankyou row mt-2 justify-content-center">Thank You</div>
             <div class="row col-md-4 justify-content-center mx-auto mt-3">
-                <button class="back checkout-btn3 btn btn-success"><a href="index.html">Back to Home</a></button>
+                <button class="back checkout-btn3 btn btn-success"><a href="index.php">Back to Home</a></button>
             </div>
 
         </div>
