@@ -14,7 +14,6 @@
 </head>
 
 <body>
-
 <!-- NAVIGATION -->
 <?php include('nav.php'); ?>
 <!-- END NAV -->
@@ -30,10 +29,21 @@
         while ($row = $result->fetch_assoc()) {
             ?>
             <div class="col-md-3">
-                <img src="../assets/images/menu/<?= htmlspecialchars($row['image']) ?>" class="product-img img-fluid mb-2">
-                <div class="product-name"><?= htmlspecialchars($row['name']) ?></div>
-                <div class="price-tag mt-1">$<?= htmlspecialchars($row['price']) ?></div>
-                <button class="btn btn-success btn-sm mt-2" id="addtocart"><a href="cart.php" style="text-decoration: none; color: inherit;">Add to cart</a></button>
+                <img src="../assets/images/menu/<?= htmlspecialchars($row['image'])?> " class="product-img img-fluid mb-2">
+                <div class="product-name"><?= htmlspecialchars($row['name'])?></div>
+                <div class="price-tag mt-1">$<?= htmlspecialchars($row['price'])?></div>
+
+            <form method="POST" action="../Backend/add_to_cart.php">
+                <input type="hidden" name="drink_id" value="<?php echo $row['id'];?> ">
+                <input type="hidden" name="name" value="<?php echo $row['name'];?> ">
+                <input type="hidden" name="price" value="<?php echo $row['price'];?> ">
+                <input type="hidden" name="image" value="<?php echo $row['image'];?> ">
+
+            <button type="submit" class="btn btn-success btn-sm mt-2" name="add_to_cart">
+                    Add to Cart
+            </button>
+            </form>
+
             </div>
             <?php
         }

@@ -14,7 +14,7 @@
         <div class="container-fluid">
             <a editable="inline" class="navbar-brand text-black ms-3" href="coffee.php">>Back</a>
 
-            <h1 class="myCart">MyCart</h1>
+            <h1 class="myCart">MyCart - Work In Progress - for finals</h1>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                 <span class="navbar-logo"></span>
@@ -65,39 +65,41 @@
                             <div class="name col-md-2 text-center">Quantity</div>
                         </div>
             
-                    <div class="row justify-content-around">
+            <div class="row justify-content-center">
+                        <div class="overflow-x-hidden overflow-y-scroll">
 
-                        <div class="item row col-md-8 align-items-center">
-                            <div class="col-md-1 text-end">
-                                <button class="remove-btn btn btn-danger">x</button>
+                            <div class="item row col-md-8 align-items-center">
+                                <div class="col-md-1 text-end">
+                                    <button class="remove-btn btn btn-danger">x</button>
+                                </div>
+                                <div class="col-md-4 text-start">
+                                    <img src="../assets/images/index/GreenApple.png" alt="Green Apple" width="50px" height="80px" class="name">Fruit tea</img>
+                                </div>
+                                <div class="col-md-3 text-center">$4.00</div>
+                                <div class="col-md-4 text-center">
+                                    <button class="qty-btn">-</button>
+                                    <span class="qty-number mx-2">1</span>
+                                    <button class="qty-btn">+</button>
+                                </div>
                             </div>
-                            <div class="col-md-4 text-start">
-                                <img src="../assets/images/index/GreenApple.png" alt="Green Apple" width="50px" height="80px" class="name">Fruit tea</img>
-                            </div>
-                            <div class="col-md-3 text-center">$4.00</div>
-                            <div class="col-md-4 text-center">
-                                <button class="qty-btn">-</button>
-                                <span class="qty-number mx-2">1</span>
-                                <button class="qty-btn">+</button>
+
+                            <div class="item row col-md-8 align-items-center">
+                                <div class="col-md-1 text-end">
+                                    <button class="remove-btn btn btn-danger">x</button>
+                                </div>
+                                <div class="col-md-4 text-start">
+                                    <img src="../assets/images/index/latte.png" alt="Iced Latte" width="50px" height="80px" class="name">Iced Latte</img>
+                                </div>
+                                <div class="col-md-3 text-center">$4.00</div>
+                                <div class="col-md-4 text-center">
+                                    <button class="qty-btn">-</button>
+                                    <span class="qty-number mx-2">1</span>
+                                    <button class="qty-btn">+</button>
+                                </div>
                             </div>
 
                         </div>
 
-                        <div class="item row col-md-8 align-items-center">
-                            <div class="col-md-1 text-end">
-                                <button class="remove-btn btn btn-danger">x</button>
-                            </div>
-                            <div class="col-md-4 text-start">
-                                <img src="../assets/images/index/latte.png" alt="Iced Latte" width="50px" height="80px" class="name">Iced Latte</img>
-                            </div>
-                            <div class="col-md-3 text-center">$4.00</div>
-                            <div class="col-md-4 text-center">
-                                <button class="qty-btn">-</button>
-                                <span class="qty-number mx-2">1</span>
-                                <button class="qty-btn">+</button>
-                            </div>
-
-                        </div>
 
                         <div class="payment row">
                             <div class="col-md-12 text-start">
@@ -115,13 +117,8 @@
                                     <input type="radio" name="payment-method" value="cash-on-delivery" > Cash on Delivery
                             </div>
                         </div>
-                        <div class="row">
 
-                                <div class="col-md-8"></div>
-                                <h3 class="totalcol col-md-4 text-center">Total: $8.00</h3>
-                        </div>
-
-                        <div class="row">
+                        <div class="row mt-5">
                             <div class="buttons col-md-4">
                                 <button class="checkout-btn1 btn btn-danger"><a href="coffee.php">Clear Shopping Cart</a></button>
                             </div>

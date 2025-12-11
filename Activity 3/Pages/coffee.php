@@ -1,5 +1,5 @@
 <?php include("../Backend/db.php");
-    $result = mysqli_query($conn,"SELECT * FROM products WHERE category = 'coffee'");
+$result = mysqli_query($conn, "SELECT * FROM products WHERE category = 'coffee'");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,18 +29,17 @@
         while ($row = $result->fetch_assoc()) {
             ?>
             <div class="col-md-3">
-                <img src="../assets/images/menu/<?= htmlspecialchars($row['image'])?> " class="product-img img-fluid mb-2">
-                <div class="product-name"><?= htmlspecialchars($row['name'])?></div>
-                <div class="price-tag mt-1">$<?= htmlspecialchars($row['price'])?></div>
+                <img src="../assets/images/menu/<?php echo htmlspecialchars($row['image']); ?>" class="product-img img-fluid mb-2">
+                <div class="product-name"><?php echo htmlspecialchars($row['name']); ?></div>
+                <div class="price-tag mt-1">$<?php echo htmlspecialchars($row['price']); ?></div>
 
             <form method="POST" action="../Backend/add_to_cart.php">
-                <input type="hidden" name="drink_id" value="<?php echo $row['id'];?> ">
-                <input type="hidden" name="name" value="<?php echo $row['name'];?> ">
-                <input type="hidden" name="price" value="<?php echo $row['price'];?> ">
-                <input type="hidden" name="image" value="<?php echo $row['image'];?> ">
-
+                <input type="hidden" name="drink_id"  value="<?php echo $row['id']; ?>">
+                <input type="hidden" name="name"      value="<?php echo $row['name']; ?>">
+                <input type="hidden" name="price"     value="<?php echo $row['price']; ?>">
+                <input type="hidden" name="image"     value="<?php echo $row['image']; ?>">
             <button type="submit" class="btn btn-success btn-sm mt-2" name="add_to_cart">
-                    Add to Cart
+                Add to Cart
             </button>
             </form>
 
