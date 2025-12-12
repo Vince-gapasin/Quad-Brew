@@ -4,32 +4,45 @@ include 'db.php';
 
 if (isset($_POST['add_to_cart'])) {
 
-    // Clean and sanitize inputs fully
     $drink_id   = intval($_POST['drink_id']);
     $drink_name = trim($_POST['name']);
     $price      = floatval($_POST['price']);
     $image      = trim($_POST['image']);
 
-    // Prepare clean query
-    $sql = "INSERT INTO cart (drink_id, name, price, image)
-            VALUES (?, ?, ?, ?)";
+    // CHECK IF ITEM ALREADY EXISTS IN CART
+    $check_sql = "SELECT quantity FROM cart WHERE drink_id = ?";
+    $check_stmt = $conn->prepare($check_sql);
+    $check_stmt->bind_param("i", $drink_id);
+    $check_stmt->execute();
+    $result = $check_stmt->get_result();
 
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("isds", 
-        $drink_id,
-        $drink_name,
-        $price,
-        $image
-    );
+    if ($result->num_rows > 0) {
+        // ITEM EXISTS → UPDATE QUANTITY +1
+        $update_sql = "UPDATE cart SET quantity = quantity + 1 WHERE drink_id = ?";
+        $update_stmt = $conn->prepare($update_sql);
+        $update_stmt->bind_param("i", $drink_id);
+        $update_stmt->execute();
+        $update_stmt->close();
 
-    if ($stmt->execute()) {
-        header("Location: ../Pages/cart.php");
-        exit;
     } else {
-        echo "Error: " . $stmt->error;
+        // ITEM DOES NOT EXIST → INSERT NEW
+        $insert_sql = "INSERT INTO cart (drink_id, name, image, price, quantity)
+                       VALUES (?, ?, ?, ?, 1)";
+        $insert_stmt = $conn->prepare($insert_sql);
+        $insert_stmt->bind_param("issd", 
+            $drink_id,
+            $drink_name,
+            $image,
+            $price
+        );
+        $insert_stmt->execute();
+        $insert_stmt->close();
     }
 
-    $stmt->close();
+    $check_stmt->close();
+
+    header("Location: ../Pages/cart.php");
+    exit;
 }
 
 $conn->close();
