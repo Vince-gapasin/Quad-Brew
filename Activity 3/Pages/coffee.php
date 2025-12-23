@@ -9,6 +9,9 @@ $result = mysqli_query($conn, "SELECT * FROM products WHERE category = 'coffee'"
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brew Quad Coffee – Products</title>
 
+    <!--logo favicon-->
+    <link rel="icon" type="image/png" href="../assets/images/index/logofavicon.png">
+
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/livecanvas-team/ninjabootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/CSS/style.css">

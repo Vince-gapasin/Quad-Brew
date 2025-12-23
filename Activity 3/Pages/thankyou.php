@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart</title>
+
+    <!--logo favicon-->
+    <link rel="icon" type="image/png" href="../assets/images/index/logofavicon.png">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/livecanvas-team/ninjabootstrap/dist/css/bootstrap.min.css" media="all">
     <link rel="stylesheet" href="../assets/CSS/thankyou.css">
 </head>
+
 <body>
-    
+
     <nav class="navbar ">
         <div class="container-fluid">
             <a editable="inline" class="navbar-brand text-black ms-3" href="index.php">>Back</a>
@@ -55,9 +61,9 @@
 
     <main class="row">
         <div class="cofbag col-lg-3 align-self-end" height="100%">
-            <img src="../assets/images/index/coffee&bag.png" alt="Coffee&Bag" height="250px" >
+            <img src="../assets/images/index/coffee&bag.png" alt="Coffee&Bag" height="250px">
         </div>
-        
+
         <div class="cart col-md-6">
 
             <div class="row justify-content-center">
@@ -86,12 +92,12 @@
                     <div class="col-md-4">xx-xx-2025</div>
                 </div>
 
-                    <div class="row ps-7">1 Iced Latte</div>
-                    <div class="row ps-7">2 Straberry</div>
+                <div class="row ps-7">1 Iced Latte</div>
+                <div class="row ps-7">2 Straberry</div>
 
-                    <div class="row ps-5 mt-3">Shipping Address</div>
-                    <div class="row ps-5">Mode of Payment</div>
-                    <div class="row ps-5">Total</div>
+                <div class="row ps-5 mt-3">Shipping Address</div>
+                <div class="row ps-5">Mode of Payment</div>
+                <div class="row ps-5">Total</div>
             </div>
 
             <div class="thankyou row mt-2 justify-content-center">Thank You</div>
@@ -101,9 +107,10 @@
 
         </div>
         <div class="broom col-lg-3 align-self-end">
-            <img src="../assets/images/index/broom.png" alt="broom" height="230px" >
+            <img src="../assets/images/index/broom.png" alt="broom" height="230px">
         </div>
     </main>
 </body>
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
 </html>
