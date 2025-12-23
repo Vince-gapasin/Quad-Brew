@@ -125,9 +125,17 @@
                     </div>
 
                     <div class="row mt-5">
+
+                        <!--Button ClearCart-->
                         <div class="buttons col-md-4">
-                            <button class="checkout-btn1 btn btn-danger"><a href="coffee.php">Clear Shopping Cart</a></button>
+                            <form action="/QUAD-BREW/Activity%203/Backend/clear_cart.php" method="post">
+                                <button type="submit" class="checkout-btn1 btn btn-danger">
+                                    Clear Shopping Cart
+                                </button>
+                            </form>
                         </div>
+
+
                         <div class="buttons col-md-4">
                             <button class="checkout-btn2 btn btn-primary"><a href="coffee.php">Add Another Order</a></button>
                         </div>
