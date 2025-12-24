@@ -18,8 +18,7 @@
 
         <nav class="navbar">
             <div class="container-fluid">
-                <a editable="inline" class="brand" href="index.php">
-                    Brew Quad Coffee</a>
+                <a editable="inline" class="brand" href="index.php">Brew Quad Coffee</a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                     <span class="navbar-logo"></span>
