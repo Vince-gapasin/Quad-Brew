@@ -14,5 +14,5 @@ $stmt = $conn->prepare($sql);
 $stmt->execute();
 
 // 3. Redirect back
-header("Location: ../Pages/coffee.php");
+header("Location: ../Pages/index.php");
 exit();

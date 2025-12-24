@@ -1,156 +1,139 @@
+<?php
+session_start(); // Start session to handle data flow
+include("../Backend/db.php");
+
+// 1. IMPROVED QUERY: Ideally, you should filter by session_id or user_id here.
+$result = mysqli_query($conn, "SELECT * FROM cart");
+
+$total_price = 0; // Initialize total variable
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart</title>
-
-    <!--logo favicon-->
+    <title>Cart | Quad Brew</title>
     <link rel="icon" type="image/png" href="../assets/images/index/logofavicon.png">
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/livecanvas-team/ninjabootstrap/dist/css/bootstrap.min.css" media="all">
     <link rel="stylesheet" href="../assets/CSS/cart.css">
-    <script src="../assets/JS/add_to_cart.js"></script>
+    <script src="../assets/JS/add_to_cart.js" defer></script>
 </head>
 
 <body>
 
-    <nav class="navbar ">
+    <nav class="navbar">
         <div class="container-fluid">
-            <a editable="inline" class="navbar-brand text-black ms-3" href="coffee.php">>Back</a>
-
-            <h1 class="myCart">MyCart - Work In Progress - for finals</h1>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                <span class="navbar-logo"></span>
-            </button>
-
-            <div class="offcanvas offcanvas-end p-2 bg-light" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header">
-                    <div class="lc-block">
-                        <div editable="rich">
-                            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-                        </div>
-                    </div>
-
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <div class="row">
-                        <div class="col">
-                            <div class="lc-block mb-4">
-
-                                <div lc-helper="shortcode" class="live-shortcode me-auto">
-                                    <ul id="menu-menu-1" class="navbar-nav">
-                                        <li class="menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-32739"><a href="https://library.livecanvas.com/starters" class="nav-link ">BS5 Page Templates</a></li>
-                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home nav-item nav-item-32738"><a href="https://library.livecanvas.com/sections/" class="nav-link ">BS5 Snippets</a></li>
-                                    </ul> <!-- /lc_nav_menu -->
-                                </div>
-
-
-                            </div>
-                            <div class="lc-block">
-                                <a class="btn btn-primary" href="#" role="button">Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <a class="navbar-brand text-black ms-3" href="coffee.php">&lt; Back to Menu</a>
         </div>
     </nav>
 
     <main class="row">
-        <div class="cofbag col-lg-3 align-self-end" height="100%">
-            <img src="../assets/images/index/coffee&bag.png" alt="Coffee&Bag" height="250px">
+        <div class="cofbag col-lg-3 align-self-end d-none d-lg-block">
+            <img src="../assets/images/index/coffee&bag.png" alt="Coffee&Bag" class="img-fluid" style="max-height: 250px;">
         </div>
-        <div class="cart col-md-6 text-center">
-            <div class="row col-md-12 justify-content-center ">
-                <div class="name col-md-3    text-center">Product</div>
-                <div class="name col-md-2 text-center">Price</div>
-                <div class="name col-md-2 text-center">Quantity</div>
+
+        <div class="cart col-md-12 col-lg-6 text-center">
+            
+            <div class="row justify-content-center mb-3 fw-bold d-none d-md-flex">
+                <div class="col-md-3">Product</div>
+                <div class="col-md-2">Price</div>
+                <div class="col-md-3">Quantity</div>
+                <div class="col-md-2">Subtotal</div>
+                <div class="col-md-1"></div>
             </div>
 
             <div class="row justify-content-center">
-                <div class="overflow-x-hidden overflow-y-scroll">
+                <div class="list overflow-x-hidden overflow-y-auto">
+                
+                <?php
+                if (mysqli_num_rows($result) > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $qty = isset($row['quantity']) ? $row['quantity'] : 1;
+                        $subtotal = $row['price'] * $qty;
+                        $total_price += $subtotal;
+                    ?>
+                    
+                    <div class="item row align-items-center border-bottom py-2">
 
-                    <div class="item row col-md-8 align-items-center">
-                        <div class="col-md-1 text-end">
-                            <button class="remove-btn btn btn-danger">x</button>
-                        </div>
-                        <div class="col-md-4 text-start">
-                            <img src="../assets/images/index/GreenApple.png" alt="Green Apple" width="50px" height="80px" class="name">Fruit tea</img>
-                        </div>
-                        <div class="col-md-3 text-center">$4.00</div>
-                        <div class="col-md-4 text-center">
-                            <button class="qty-btn">-</button>
-                            <span class="qty-number mx-2">1</span>
-                            <button class="qty-btn">+</button>
-                        </div>
-                    </div>
-
-                    <div class="item row col-md-8 align-items-center">
-                        <div class="col-md-1 text-end">
-                            <button class="remove-btn btn btn-danger">x</button>
-                        </div>
-                        <div class="col-md-4 text-start">
-                            <img src="../assets/images/index/latte.png" alt="Iced Latte" width="50px" height="80px" class="name">Iced Latte</img>
-                        </div>
-                        <div class="col-md-3 text-center">$4.00</div>
-                        <div class="col-md-4 text-center">
-                            <button class="qty-btn">-</button>
-                            <span class="qty-number mx-2">1</span>
-                            <button class="qty-btn">+</button>
-                        </div>
-                    </div>
-
-                </div>
-
-
-                <div class="payment row">
-                    <div class="col-md-12 text-start">
-                        <h3>Payment Method</h3>
-                    </div>
-
-                    <div class="method row">
-                        <div class="payment-method col-md-12 text-start">
-                            <input type="radio" name="payment-method" value="credit-card"> Credit Card
-                        </div>
-                        <div class="payment-method col-md-12 text-start">
-                            <input type="radio" name="payment-method" value="paypal"> Paypal
-                        </div>
-                        <div class="payment-method col-md-12 text-start">
-                            <input type="radio" name="payment-method" value="cash-on-delivery"> Cash on Delivery
-                        </div>
-                    </div>
-
-                    <div class="row mt-5">
-
-                        <!--Button ClearCart-->
-                        <div class="buttons col-md-4">
-                            <form action="/QUAD-BREW/Activity%203/Backend/clear_cart.php" method="post">
-                                <button type="submit" class="checkout-btn1 btn btn-danger">
-                                    Clear Shopping Cart
-                                </button>
+                    <div class="col-md-1">
+                            <form action="../Backend/remove_item.php" method="POST">
+                                <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                                <button type="submit" class="btn btn-danger btn-sm">x</button>
                             </form>
                         </div>
-
-
-                        <div class="buttons col-md-4">
-                            <button class="checkout-btn2 btn btn-primary"><a href="coffee.php">Add Another Order</a></button>
+                        
+                        <div class="col-md-3 d-flex align-items-center flex-column flex-md-row">
+                            <img src="../assets/images/menu/<?php echo htmlspecialchars($row['image']); ?>" class="product-img img-fluid m-2">
+                            <div class="product-name small"><?php echo htmlspecialchars($row['name']); ?></div>
                         </div>
-                        <div class="buttons col-md-4">
-                            <button class="checkout-btn3 btn btn-success"><a href="conf.php">Proceed to Checkout</a></button>
+
+                        <div class="price-tag col-md-2">$<?php echo htmlspecialchars($row['price']); ?></div>
+
+                        <div class="col-md-3 d-flex justify-content-center align-items-center">
+                            <button class="qty-btn btn btn-sm btn-outline-secondary" onclick="updateQty(<?php echo $row['id']; ?>, 'minus')">-</button>
+                            <span class="qty-number mx-2" id="qty-<?php echo $row['id']; ?>"><?php echo $qty; ?></span>
+                            <button class="qty-btn btn btn-sm btn-outline-secondary" onclick="updateQty(<?php echo $row['id']; ?>, 'plus')">+</button>
+                        </div>
+
+                        <div class="col-md-2">$<?php echo number_format($subtotal, 2); ?></div>
+                    </div>
+                    <?php
+                    }
+                } else {
+                    echo "<p class='mt-5'>Your cart is empty.</p>";
+                }
+                ?>
+                </div>
+
+                <div class="payment row mt-4 p-3 bg-light rounded">
+                    <div class="col-md-12 text-end mb-3">
+                        <h3>Total: $<?php echo number_format($total_price, 2); ?></h3>
+                    </div>
+
+                    <div class="col-md-12 text-start">
+                        <h5>Payment Method</h5>
+                        
+                        <form id="checkoutForm" action="thankyou.php" method="POST">
+                            <input type="hidden" name="total_price" value="<?php echo $total_price; ?>">
+                            
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="payment-method" id="credit" value="Credit Card" checked>
+                                <label class="form-check-label" for="credit">Credit Card</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="payment-method" id="paypal" value="Paypal">
+                                <label class="form-check-label" for="paypal">Paypal</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="payment-method" id="otc" value="Over The Counter">
+                                <label class="form-check-label" for="otc">Over The Counter</label>
+                            </div>
+                        </form>
+                        </div>
+
+                    <div class="row mt-4 g-2">
+                        <div class="col-md-4">
+                            <form action="../Backend/clear_cart.php" method="post">
+                                <button type="submit" class="btn btn-danger w-100">Clear Cart</button>
+                            </form>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="coffee.php" class="btn btn-primary w-100">Add Items</a>
+                        </div>
+                        <div class="col-md-4">
+                            <button type="submit" form="checkoutForm" class="btn btn-success w-100">Checkout</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="broom col-lg-3 align-self-end">
-            <img src="../assets/images/index/broom.png" alt="broom" height="230px">
+
+        <div class="broom col-lg-3 align-self-end d-none d-lg-block">
+            <img src="../assets/images/index/broom.png" alt="broom" class="img-fluid" style="max-height: 230px;">
         </div>
     </main>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-
 </html>
