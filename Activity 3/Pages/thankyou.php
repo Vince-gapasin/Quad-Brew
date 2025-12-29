@@ -6,12 +6,12 @@ $result = mysqli_query($conn, "SELECT * FROM cart");
 
 // Check if form was submitted from cart.php and store in session
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
+
     // 1. Store Payment Method
     if (isset($_POST['payment-method'])) {
         $_SESSION['payment_method'] = $_POST['payment-method'];
     }
-    
+
     // 2. Store Total Price
     if (isset($_POST['total_price'])) {
         $_SESSION['total_price'] = $_POST['total_price'];
@@ -49,7 +49,7 @@ $order_id = isset($_SESSION['order_id']) ? $_SESSION['order_id'] : "#QB-000000";
     <nav class="navbar ">
         <div class="container-fluid">
             <form action="../Backend/clear_cart.php" method="post">
-                    <button type="submit" class="navbar-brand text-black ms-3" href="index.php">Back</button>
+                <button type="submit" class="navbar-brand text-black ms-3" href="index.php">Back</button>
             </form>
 
             <h1 class="myCart">Order Placed</h1>
@@ -115,22 +115,22 @@ $order_id = isset($_SESSION['order_id']) ? $_SESSION['order_id'] : "#QB-000000";
                     <div class="col-md-4">Brew Quad Coffee</div>
                     <div class="col-md-4"><?php echo date("m-d-Y"); ?></div>
                 </div>
-            <?php
-            if (mysqli_num_rows($result) > 0) {
-                while ($row = $result->fetch_assoc()) {
-            ?>
-            <div class="row align-items-center">
-                <div class="product-name small col-md-3 text-center ms-5"><?php echo htmlspecialchars($row['id']); ?></div>
-                <div class="product-name small col-md-3 text-start"><?php echo htmlspecialchars($row['name']); ?></div>
-            </div>
+                <?php
+                if (mysqli_num_rows($result) > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                ?>
+                        <div class="row align-items-center">
+                            <div class="product-name small col-md-3 text-center ms-5"><?php echo htmlspecialchars($row['id']); ?></div>
+                            <div class="product-name small col-md-3 text-start"><?php echo htmlspecialchars($row['name']); ?></div>
+                        </div>
 
-            <?php
+                <?php
+                    }
                 }
-            }
-            ?>
+                ?>
                 <div class="row mt-3 ps-5 fw-bold">Shipping Address: </div>
                 <div class="row ps-5 fw-bold">Mode of Payment: <?php echo htmlspecialchars($active_payment); ?></div>
-                <div class="row ps-5 fw-bold">Total Paid: $<?php echo number_format($final_total, 2); ?></div>
+                <div class="row ps-5 fw-bold">Total Paid: ₱<?php echo number_format($final_total, 2); ?></div>
             </div>
 
             <div class="thankyou row mt-2 justify-content-center">Thank You</div>

@@ -35,7 +35,7 @@ $result = mysqli_query($conn, "SELECT * FROM products WHERE category = 'coffee'"
                     <div class="col-md-3">
                         <img src="../assets/images/menu/<?php echo htmlspecialchars($row['image']); ?>" class="product-img img-fluid mb-2">
                         <div class="product-name"><?php echo htmlspecialchars($row['name']); ?></div>
-                        <div class="price-tag mt-1">$<?php echo htmlspecialchars($row['price']); ?></div>
+                        <div class="price-tag mt-1">₱<?php echo htmlspecialchars($row['price']); ?></div>
 
                         <form method="POST" action="../Backend/add_to_cart.php">
                             <input type="hidden" name="drink_id" value="<?php echo $row['id']; ?>">
