@@ -1,0 +1,95 @@
+body {
+    overflow-x: hidden;
+    background-color: #FFF8E7;
+    font-family: sans-serif;
+}
+
+.navbar {
+    padding: 0 0;
+    background-color: #3A280F;
+}
+
+.navbar a {
+    font-family: 'BillionDreams', sans-serif;
+    font-size: 60px;
+    color: #ffffff;
+}
+
+.brand {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- Order now --- */
+.custom-heading {
+    font-family:Fat Kat;
+    font-weight: normal;
+    color:#3A280F
+}
+
+/* --- brewmood text --- */
+.brewmood h1 {
+    font-family: 'Times New Roman', Times, serif; 
+    font-size: 60px;
+    color: #BC6E19;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+/* Dark pill-shaped inputs */
+.custom-input {
+    background-color: #1c1c1c;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    padding: 15px 25px;
+    font-size: 18px;
+}
+
+/* Placeholder text color */
+.custom-input::placeholder {
+    color: #e0e0e0;
+    opacity: 1;
+}
+
+/* Input focus state */
+.custom-input:focus {
+    background-color: #2c2c2c;
+    color: white;
+    box-shadow: none;
+    outline: 2px solid #555;
+}
+
+/* Dark pill-shaped login button */
+.btn-login {
+    align-items: center;
+    background-color: #fff700;
+    color: rgb(0, 0, 0);
+    border-radius: 50px;
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.btn-login:hover {
+    background-color: #2496FF;
+    color: rgb(255, 255, 255);
+}
+
+
+/* --- Font Definitions --- */
+@font-face {
+    font-family: 'BrewQuadrant';
+    src: url('../Fonts/fat_kat/Fat Kat - (Demo) hanscostudio.com.ttf');
+}
+
+@font-face {
+    font-family: 'AuthorHandwriting';
+    src: url('../Fonts/author_handwriting/Author Handwriting.otf');
+}
+
+@font-face {
+    font-family: 'BillionDreams';
+    src: url('../Fonts/billion_dreams/BillionDreams_PERSONAL.ttf');
+}
