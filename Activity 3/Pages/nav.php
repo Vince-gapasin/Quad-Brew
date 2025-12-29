@@ -12,22 +12,26 @@
 
         <div class="collapse navbar-collapse" id="navbarNav">
 
-            <ul class="navbar-nav mx-auto nav-center">
+
+            <!-- Praf Frappe typo fixed -->
+            <!-- CENTER NAV LINKS without profile icon -->
+            <ul class="navbar-nav position-absolute start-50 translate-middle-x">
                 <li class="nav-item"><a class="nav-link" href="coffee.php">Coffee</a></li>
                 <li class="nav-item"><a class="nav-link" href="milktea.php">Milktea</a></li>
-                <li class="nav-item"><a class="nav-link" href="praf.php">Praf</a></li>
+                <li class="nav-item"><a class="nav-link" href="praf.php">Frappe</a></li>
                 <li class="nav-item"><a class="nav-link" href="fruittea.php">Fruit Tea</a></li>
             </ul>
 
+            <!-- CART ICON only || profile already excluded-->
             <ul class="navbar-nav d-flex flex-row ms-auto nav-icons">
-                <li class="nav-item me-3">
-                    <a class="nav-link" href="cart.php"><img src="../assets/images/menu/cart.png" width="40" alt="myCart"></a>
-                </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><img src="../assets/images/menu/profile.png" width="40" alt="Account"></a>
+                    <a class="nav-link" href="cart.php">
+                        <img src="../assets/images/menu/cart.png" width="40" alt="myCart">
+                    </a>
                 </li>
             </ul>
 
         </div>
+
     </div>
 </nav>

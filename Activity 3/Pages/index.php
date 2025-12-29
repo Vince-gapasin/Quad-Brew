@@ -20,10 +20,6 @@
             <div class="container-fluid">
                 <a editable="inline" class="brand" href="index.php">Brew Quad Coffee</a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                    <span class="navbar-logo"></span>
-                </button>
-
                 <div class="offcanvas offcanvas-end p-2 bg-light" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-header">
                         <div class="lc-block">
@@ -63,7 +59,7 @@
 
                 <div class="categ row">
                     <div class="bdy-txt1 col-lg-4 text-start ">Featured Drinks
-                        <p class="text-start">Enjoy your drink at your place</p>
+                        <p class="text-start">Sip and enjoy at your own pace</p>
                         <a href="coffee.php" class="ordr-btn btn btn-success">Order Now</a>
                     </div>
 
