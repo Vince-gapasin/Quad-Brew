@@ -12,9 +12,9 @@ if (!isset($_POST['signup'])) {
     die("Form not submitted");
 }
 
-$full_name = $_POST['fullname'];
+$full_name = $_POST['full_name'];
 $email = $_POST['email'];
-$phone_number = $_POST['phone'];
+$phone_number = $_POST['phone_number'];
 $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 $address = $_POST['address'];
 
