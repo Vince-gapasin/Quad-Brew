@@ -1,3 +1,27 @@
+<?php
+
+session_start();
+
+$errors = [
+    'login' => $_SESSION['login_error'] ?? '',
+    'signup' => $_SESSION['signup_error'] ?? ''
+];
+
+$activeForm = $_SESSION['active_form'] ?? 'login';
+
+session_unset();
+
+function showError($error) {
+    return !empty($error) ? "<p class='error-message'>$error</p>" : '';
+}
+
+function isActiveForm($formName, $activeForm){
+    return $formName === $activeForm ? 'active' : '';
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,6 +63,7 @@
 
                 <!-- form eto about login-->
                 <form action="../Backend/login_process.php" method="POST" class="w-75 mx-auto">
+                    <?= showError($errors['login']); ?>
                     <div class="mb-3">
                         <input type="email" class="form-control custom-input" name="email" placeholder="Email:" required>
                     </div>
@@ -47,7 +72,7 @@
                     </div>
 
                     <div class="text-center">
-                        <button type="submit" class="btn btn-login mb-3" style="font-family:'Times New Roman', Times, serif; font-weight:bold;">Log In</button>
+                        <button type="submit" name="login" class="btn btn-login mb-3" style="font-family:'Times New Roman', Times, serif; font-weight:bold;">Log In</button>
 
                         <p style="font-family: 'Times New Roman', Times, serif; font-size: 20px;">
                             Don't have an account? <a href="signup.php" class="text-dark fw-bold">Sign up</a>
