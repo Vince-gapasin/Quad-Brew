@@ -3,6 +3,7 @@ session_start(); // Start session to retrieve data
 include("../Backend/db.php");
 
 $result = mysqli_query($conn, "SELECT * FROM cart");
+$ress = mysqli_query($conn, "SELECT * FROM users");
 
 // Check if form was submitted from cart.php and store in session
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -24,10 +25,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 // Retrieve values from session (default to empty/0 if not set)
+// ... existing code ...
 $active_payment = isset($_SESSION['payment_method']) ? $_SESSION['payment_method'] : "Not Selected";
 $final_total = isset($_SESSION['total_price']) ? $_SESSION['total_price'] : 0;
 // Retrieve the ID we just generated
 $order_id = isset($_SESSION['order_id']) ? $_SESSION['order_id'] : "#QB-000000";
+
+// --- ADD THIS LINE BELOW ---
+$address = isset($_SESSION['address']) ? $_SESSION['address'] : "Address not available";
+// ---------------------------
+?>
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -128,7 +138,8 @@ $order_id = isset($_SESSION['order_id']) ? $_SESSION['order_id'] : "#QB-000000";
                     }
                 }
                 ?>
-                <div class="row mt-3 ps-5 fw-bold">Shipping Address: </div>
+                <div class="row mt-3 ps-5 fw-bold">Shipping Address: <?php echo htmlspecialchars($address); ?></div>
+                
                 <div class="row ps-5 fw-bold">Mode of Payment: <?php echo htmlspecialchars($active_payment); ?></div>
                 <div class="row ps-5 fw-bold">Total Paid: ₱<?php echo number_format($final_total, 2); ?></div>
             </div>

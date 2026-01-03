@@ -19,6 +19,10 @@ if (isset($_POST['login'])) {
             // ✅ Login success
             $_SESSION['full_name'] = $user['full_name'];
             $_SESSION['email'] = $user['email'];
+            
+            // --- ADD THIS LINE BELOW ---
+            $_SESSION['address'] = $user['address']; 
+            // ---------------------------
 
             header("Location: ../Pages/index.php");
             exit();
@@ -32,3 +36,4 @@ if (isset($_POST['login'])) {
     header("Location: ../Pages/login.php");
     exit();
 }
+?>
