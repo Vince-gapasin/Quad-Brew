@@ -19,36 +19,21 @@
         <nav class="navbar">
             <div class="container-fluid">
                 <a editable="inline" class="brand" href="index.php">Brew Quad Coffee</a>
+            
+                <li class="nav-links" style="list-style-type: none;">
+                    <a href="#" onclick="openLogoutPopup(); return false;">
+                        <img src="../assets/images/index/logoutwhite.png" alt="Logout" width="30" height="30">
+                    </a>
+                </li>
+            </div>
 
-                <div class="offcanvas offcanvas-end p-2 bg-light" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                    <div class="offcanvas-header">
-                        <div class="lc-block">
-                            <div editable="rich">
-                                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-                            </div>
-                        </div>
-
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <div class="row">
-                            <div class="col">
-                                <div class="lc-block mb-4">
-
-                                    <div lc-helper="shortcode" class="live-shortcode me-auto">
-                                        <ul id="menu-menu-1" class="navbar-nav">
-                                            <li class="menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-32739"><a href="https://library.livecanvas.com/starters" class="nav-link ">BS5 Page Templates</a></li>
-                                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home nav-item nav-item-32738"><a href="https://library.livecanvas.com/sections/" class="nav-link ">BS5 Snippets</a></li>
-                                        </ul>
-                                    </div>
-
-
-                                </div>
-                                <div class="lc-block">
-                                    <a class="btn btn-primary" href="#" role="button">Buy Now</a>
-                                </div>
-                            </div>
-                        </div>
+            <div id="logoutModal" class="logout-modal">
+                <div class="modal-content">
+                    <h3>Confirm Logout</h3>
+                    <p>Are you sure you want to log out?</p>
+                    <div class="modal-buttons">
+                        <button onclick="confirmLogout()" class="btn-yes">Yes, Logout</button>
+                        <button onclick="closeLogoutPopup()" class="btn-no">Cancel</button>
                     </div>
                 </div>
             </div>
@@ -99,6 +84,32 @@
     </footer>
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
+        <script>
+        // Function to show the popup
+        function openLogoutPopup() {
+            // Change display from 'none' to 'flex' to show it
+            document.getElementById("logoutModal").style.display = "flex";
+        }
+
+        // Function to close the popup
+        function closeLogoutPopup() {
+            document.getElementById("logoutModal").style.display = "none";
+        }
+
+        // Function to actually log out
+        function confirmLogout() {
+            // REPLACE 'logout.php' with the actual path to your logout script
+            window.location.href = "login.php";
+        }
+
+        // Optional: Close modal if user clicks outside the box
+        window.onclick = function(event) {
+            var modal = document.getElementById("logoutModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 
 </html>
