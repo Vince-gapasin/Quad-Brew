@@ -36,10 +36,6 @@ $address = isset($_SESSION['address']) ? $_SESSION['address'] : "Address not ava
 // ---------------------------
 ?>
 
-
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -138,6 +134,7 @@ $address = isset($_SESSION['address']) ? $_SESSION['address'] : "Address not ava
                     }
                 }
                 ?>
+
                 <div class="row mt-3 ps-5 fw-bold">Shipping Address: <?php echo htmlspecialchars($address); ?></div>
                 
                 <div class="row ps-5 fw-bold">Mode of Payment: <?php echo htmlspecialchars($active_payment); ?></div>
