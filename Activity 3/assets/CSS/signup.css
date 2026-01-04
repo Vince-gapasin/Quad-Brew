@@ -131,7 +131,7 @@ body {
 }
 
 .popup-content h2 {
-    font-family: 'Times New Roman', Times, serif/* Your custom font */
+    font-family: 'Times New Roman', Times, serif;/* Your custom font */
     font-size: 45px;
     margin-bottom: 15px;
 }
