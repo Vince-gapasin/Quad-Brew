@@ -20,7 +20,7 @@ $address = $_POST['address'];
 
 $checkEmail = $conn->query("SELECT email FROM users WHERE email = '$email'")
     or die("Check failed: " . $conn->error);
-
+    
 if ($checkEmail->num_rows > 0) {
     $_SESSION['signup_error'] = "Email already exists!";
 } else {
@@ -28,9 +28,11 @@ if ($checkEmail->num_rows > 0) {
         "INSERT INTO users (full_name, email, phone_number, password, address)
          VALUES ('$full_name', '$email', '$phone_number', '$password', '$address')"
     ) or die("Insert failed: " . $conn->error);
+    
+    // Add this line:
+    $_SESSION['signup_success'] = "Account created successfully!";
 }
 
 header("Location: ../Pages/signup.php");
 exit();
-
 ?>

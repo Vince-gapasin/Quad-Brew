@@ -1,11 +1,13 @@
 <?php
-
 session_start();
 
 $errors = [
     'login' => $_SESSION['login_error'] ?? '',
     'signup' => $_SESSION['signup_error'] ?? ''
 ];
+
+// Add this line to capture success message
+$signupSuccess = $_SESSION['signup_success'] ?? '';
 
 $activeForm = $_SESSION['active_form'] ?? 'login';
 
@@ -81,6 +83,45 @@ function isActiveForm($formName, $activeForm){
             <img src="../assets/images/signup/top coffee.png" alt="broom" class="img-fluid" style="max-height: 300px;">
         </div>
     </main>
+
+    <div id="statusPopup" class="popup-overlay" style="display: none;">
+        <div class="popup-content">
+            <h2 id="popupTitle">Notification</h2>
+            <p id="popupMessage"></p>
+            <button type="button" class="close" onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // Get messages from PHP
+        const errorMessage = "<?= addslashes($errors['signup']) ?>";
+        const successMessage = "<?= addslashes($signupSuccess) ?>";
+        
+        const popup = document.getElementById('statusPopup');
+        const title = document.getElementById('popupTitle');
+        const msg = document.getElementById('popupMessage');
+
+        // Logic to show popup
+        if (errorMessage) {
+            title.innerText = "Ooops!";
+            title.style.color = "#d9534f"; // Red color
+            msg.innerText = errorMessage;
+            popup.style.display = 'flex';
+        } else if (successMessage) {
+            title.innerText = "Success!";
+            title.style.color = "#1fc10d"; // Green color
+            msg.innerText = successMessage;
+            popup.style.display = 'flex';
+        }
+
+        function closePopup() {
+            popup.style.display = 'none';
+            // Optional: Redirect to login if signup was successful
+            if (successMessage) {
+                window.location.href = 'login.php';
+            }
+        }
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
