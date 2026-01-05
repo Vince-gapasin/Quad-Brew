@@ -19,9 +19,9 @@ if (isset($_POST['login'])) {
             // ✅ Login success
             $_SESSION['full_name'] = $user['full_name'];
             $_SESSION['email'] = $user['email'];
-            
+
             // --- ADD THIS LINE BELOW ---
-            $_SESSION['address'] = $user['address']; 
+            $_SESSION['address'] = $user['address'];
             // ---------------------------
 
             header("Location: ../Pages/index.php");
@@ -30,10 +30,9 @@ if (isset($_POST['login'])) {
     }
 
     // ❌ Login failed
-    $_SESSION['login_error'] = "Incorrect email or password";
+    $_SESSION['login_error'] = "Invalid credentials";
     $_SESSION['active_form'] = "login";
 
     header("Location: ../Pages/login.php");
     exit();
 }
-?>
