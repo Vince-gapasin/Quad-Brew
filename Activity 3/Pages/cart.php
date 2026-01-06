@@ -123,8 +123,12 @@ $total_price = 0; // Initialize total variable
                             <a href="coffee.php" class="btn btn-primary w-100">Add Items</a>
                         </div>
                         <div class="col-md-4">
-                            <button type="submit" form="checkoutForm" class="btn btn-success w-100">Checkout</button>
+                            <button type="submit" form="checkoutForm" class="btn btn-success w-100"
+                                <?php if ($total_price <= 0) echo "disabled"; ?>>
+                                Checkout
+                            </button>
                         </div>
+
                     </div>
                 </div>
             </div>
