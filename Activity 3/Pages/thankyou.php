@@ -112,7 +112,6 @@ $address = isset($_SESSION['address']) ? $_SESSION['address'] : "Address not ava
 
             <div class="order row mt-3">
                 <div class="col-md-6">Order #<?php echo htmlspecialchars($order_id); ?></div>
-                <div class="col-md-6 text-end">View Your Order</div>
             </div>
 
             <div class="box">
@@ -136,7 +135,7 @@ $address = isset($_SESSION['address']) ? $_SESSION['address'] : "Address not ava
                 ?>
 
                 <div class="row mt-3 ps-5 fw-bold">Shipping Address: <?php echo htmlspecialchars($address); ?></div>
-                
+
                 <div class="row ps-5 fw-bold">Mode of Payment: <?php echo htmlspecialchars($active_payment); ?></div>
                 <div class="row ps-5 fw-bold">Total Paid: ₱<?php echo number_format($final_total, 2); ?></div>
             </div>
@@ -151,7 +150,7 @@ $address = isset($_SESSION['address']) ? $_SESSION['address'] : "Address not ava
 
         </div>
         <div class="broom col-lg-3 align-self-end">
-            <img src="../assets/images/index/broom.png" alt="broom" height="230px">
+            <img src="../assets/images/index/girl.png" alt="broom" height="250px">
         </div>
     </main>
 </body>

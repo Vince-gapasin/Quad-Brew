@@ -30,8 +30,8 @@ $total_price = 0; // Initialize total variable
     </nav>
 
     <main class="row">
-        <div class="cofbag col-lg-3 align-self-end d-none d-lg-block">
-            <img src="../assets/images/index/coffee&bag.png" alt="Coffee&Bag" class="img-fluid" style="max-height: 250px;">
+        <div class="coffeeart col-lg-3 align-self-end d-none d-lg-block">
+            <img src="../assets/images/index/CoffeeArt.png" alt="coffeeart" class="img-fluid" style="max-height: 250px;">
         </div>
 
         <div class="cart col-md-12 col-lg-6 text-center">
@@ -134,8 +134,8 @@ $total_price = 0; // Initialize total variable
             </div>
         </div>
 
-        <div class="broom col-lg-3 align-self-end d-none d-lg-block">
-            <img src="../assets/images/index/broom.png" alt="broom" class="img-fluid" style="max-height: 230px;">
+        <div class="barista col-lg-3 align-self-end d-none d-lg-block">
+            <img src="../assets/images/index/barista.png" alt="barista" class="img-fluid" style="height: 250px;">
         </div>
     </main>
 
